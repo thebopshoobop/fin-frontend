@@ -1,5 +1,6 @@
 import React from "react";
-import { Header, Divider, Grid, Item } from "semantic-ui-react";
+import PropTypes from "prop-types";
+import { Header, Divider, Grid } from "semantic-ui-react";
 
 import Article from "./Article";
 import articles from "../lib/articles";
@@ -12,18 +13,23 @@ const datedArt = articles.map(article => {
   return article;
 });
 
-const Articles = ({ fetching, boardsToShow, lists, onAddList }) => (
+const Articles = ({ fetching, articles }) => (
   <Grid>
     <Grid.Row>
-      <Header as="h1">Everything</Header>
+      <Grid.Column>
+        <Header as="h1">Everything</Header>
+      </Grid.Column>
     </Grid.Row>
     <Divider />
     <Grid.Row>
-      <Item.Group>
-        {datedArt.map(article => <Article {...article} key={article.url} />)}
-      </Item.Group>
+      {datedArt.map(article => <Article {...article} key={article.url} />)}
     </Grid.Row>
   </Grid>
 );
+
+Articles.propTypes = {
+  fetching: PropTypes.bool,
+  articles: PropTypes.array
+};
 
 export default Articles;

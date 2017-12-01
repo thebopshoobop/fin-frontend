@@ -5,7 +5,7 @@ const articles = [
     id: 4,
     image: "img/f9719cd7-1cc1-4357-963a-67aee5fa5df4.jpg",
     published: "2017, 11, 30, 22, 5, 18",
-    read: true,
+    read: false,
     summary:
       "Video is going to be a thing at Ars from here on, and we’ll do our best to make it good.",
     title: "The state of video journalism on Ars Technica—and its future",
@@ -30,7 +30,7 @@ const articles = [
     id: 3,
     image: "img/16cf1e64-5984-4a05-a637-cb62b2428748.jpg",
     published: "2017, 11, 30, 20, 28, 24",
-    read: true,
+    read: false,
     summary: "Trump says we'll handle it, but options are severely limited.",
     title: "North Korea can hit all of US with its new ICBM. Deal with it",
     url: "https://arstechnica.com/?p=1212043"
