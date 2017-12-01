@@ -1,8 +1,15 @@
 import React from "react";
+import { Container } from "semantic-ui-react";
+
+import SiteHeader from "./SiteHeader";
+import Articles from "./Articles";
 
 const App = () => (
   <div>
-    <h1>Hello, world!</h1>
+    <SiteHeader />
+    <Container>
+      <Articles />
+    </Container>
   </div>
 );
 
