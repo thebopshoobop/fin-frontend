@@ -1,37 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon, Button } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 
-const Toggle = ({ enabled, label, activeLabel, color, onClick }) => {
+import preventDefault from "../../lib/preventDefault";
+
+const Toggle = ({ enabled, label, activeLabel, color, onToggle }) => {
   activeLabel = activeLabel ? activeLabel : label;
-  const current = {
-    icon: enabled ? "toggle on" : "toggle off",
-    label: enabled ? activeLabel : label
-  };
-  const alternate = {
-    icon: enabled ? "toggle off" : "toggle on",
-    label: enabled ? label : activeLabel
-  };
+  label = enabled ? activeLabel : label;
+  const icon = enabled ? "toggle on" : "toggle off";
 
   return (
-    <Button
-      animated="fade"
-      basic
-      compact
-      size="mini"
-      onClick={onClick}
-      color={color}
-      floated="right"
+    <a
+      href=""
+      onClick={preventDefault(onToggle)}
+      style={{ color, display: "block" }}
     >
-      <Button.Content visible>
-        <Icon name={current.icon} color={color} />
-        {current.label}
-      </Button.Content>
-      <Button.Content hidden>
-        <Icon name={alternate.icon} color={color} />
-        {alternate.label}
-      </Button.Content>
-    </Button>
+      <Icon name={icon} color={color} />
+      {label}
+    </a>
   );
 };
 
